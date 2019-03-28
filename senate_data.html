@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Senate Data</title>
+</head>
+
+<body>
+    <table id="senateData">
+    </table>
+    <script src="senate.js"></script>
+    <script>
+
+        function genera_tabla() {
+            let body = document.getElementsByTagName("body")[0];
+            let tabla = document.createElement("table");
+            let tblBody = document.createElement("tbody");
+
+            let heading = new Array();
+            heading[0] = "Name"
+            heading[1] = "Party"
+            heading[2] = "State"
+            heading[3] = "Years in Office"
+            heading[4] = "% Votes w/ Party"
+
+            let tr = document.createElement("tr");
+            tblBody.appendChild(tr);
+            for (n = 0; n < heading.length; n++) {
+                let th = document.createElement("th");
+                th.width = "100";
+                th.appendChild(document.createTextNode(heading[n]));
+                tr.appendChild(th);
+            }
+
+            for (let i = 0; i < data.results[0].num_results; i++) {
+                let hilera = document.createElement("tr");
+                let textoHilera = document.createTextNode(data.results[0].members[i].first_name + " "
+                    + data.results[0].members[i].middle_name + " " + data.results[0].members[i].last_name);
+                hilera.appendChild(textoHilera);
+
+                for (let j = 0; j < 1; j++) {
+                    let celda = document.createElement("td");
+                    let textoCelda = document.createTextNode(data.results[0].members[i].party);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+                }
+                for (let k = 0; k < 1; k++) {
+                    let celda = document.createElement("td");
+                    let textoCelda = document.createTextNode(data.results[0].members[i].state);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+                }
+                for (let l = 0; l < 1; l++) {
+                    let celda = document.createElement("td");
+                    let textoCelda = document.createTextNode(data.results[0].members[i].seniority);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+                }
+                for (let m = 0; m < 1; m++) {
+                    let celda = document.createElement("td");
+                    let textoCelda = document.createTextNode(data.results[0].members[i].votes_with_party_pct);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+                }
+                tblBody.appendChild(hilera);
+
+            }
+            tabla.appendChild(tblBody);
+            body.appendChild(tabla);
+            tabla.setAttribute("border", "2");
+
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
