@@ -10,11 +10,14 @@
 
 <body>
     <table id="senateData">
+        <button onclick="genera_tabla()">Tabla</button>
     </table>
     <script src="senate.js"></script>
     <script>
 
         function genera_tabla() {
+
+            document.getElementById("senateData").innerHTML;
             let body = document.getElementsByTagName("body")[0];
             let tabla = document.createElement("table");
             let tblBody = document.createElement("tbody");
@@ -27,58 +30,62 @@
             heading[4] = "% Votes w/ Party"
 
             let tr = document.createElement("tr");
-            tblBody.appendChild(tr);
+            tblBody.append(tr);
             for (n = 0; n < heading.length; n++) {
                 let th = document.createElement("th");
-                th.width = "100";
-                th.appendChild(document.createTextNode(heading[n]));
-                tr.appendChild(th);
+                th.width = "175";
+                th.append(heading[n]);
+                tr.append(th);
             }
 
             for (let i = 0; i < data.results[0].num_results; i++) {
                 let hilera = document.createElement("tr");
-                let textoHilera = document.createTextNode(data.results[0].members[i].first_name + " "
-                    + data.results[0].members[i].middle_name + " " + data.results[0].members[i].last_name);
-                hilera.appendChild(textoHilera);
+                for (let j = 0; j < 1; j++) {
+                    let celda = document.createElement("td");
+                    let textoCelda = (data.results[0].members[i].first_name + " "
+                        + data.results[0].members[i].middle_name + " " + data.results[0].members[i].last_name)
+                        .link(data.results[0].members[i].url);
+                    celda.innerHTML = textoCelda;
+                    hilera.append(celda);
+
+                }
 
                 for (let j = 0; j < 1; j++) {
                     let celda = document.createElement("td");
-                    let textoCelda = document.createTextNode(data.results[0].members[i].party);
-                    celda.appendChild(textoCelda);
-                    hilera.appendChild(celda);
+                    let textoCelda = (data.results[0].members[i].party);
+                    celda.append(textoCelda);
+                    hilera.append(celda);
                 }
-                for (let k = 0; k < 1; k++) {
+
+                for (let j = 0; j < 1; j++) {
                     let celda = document.createElement("td");
-                    let textoCelda = document.createTextNode(data.results[0].members[i].state);
-                    celda.appendChild(textoCelda);
-                    hilera.appendChild(celda);
+                    let textoCelda = (data.results[0].members[i].state);
+                    celda.append(textoCelda);
+                    hilera.append(celda);
                 }
-                for (let l = 0; l < 1; l++) {
+
+                for (let j = 0; j < 1; j++) {
                     let celda = document.createElement("td");
-                    let textoCelda = document.createTextNode(data.results[0].members[i].seniority);
-                    celda.appendChild(textoCelda);
-                    hilera.appendChild(celda);
+                    let textoCelda = (data.results[0].members[i].seniority);
+                    celda.append(textoCelda);
+                    hilera.append(celda);
                 }
-                for (let m = 0; m < 1; m++) {
+
+                for (let j = 0; j < 1; j++) {
                     let celda = document.createElement("td");
-                    let textoCelda = document.createTextNode(data.results[0].members[i].votes_with_party_pct);
-                    celda.appendChild(textoCelda);
-                    hilera.appendChild(celda);
+                    let textoCelda = (data.results[0].members[i].votes_with_party_pct);
+                    celda.append(textoCelda);
+                    hilera.append(celda);
                 }
-                tblBody.appendChild(hilera);
+
+                tblBody.append(hilera);
 
             }
-            tabla.appendChild(tblBody);
-            body.appendChild(tabla);
+            tabla.append(tblBody);
+            body.append(tabla);
             tabla.setAttribute("border", "2");
 
         }
-
-
-
-
-
-
 
     </script>
 </body>
