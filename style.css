@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+body{
+    font-family: 'Roboto Slab', serif;
+}
+
+.titulo{
+    margin-top: 50px;
+}
+a{
+    height: 100%;
+    width: 100%;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+    width: 80%;
+    margin-left: 10%;
+}
+.contacto{
+    font-size: 20px;
+    align-content: center;
+    margin-top: 35px;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    background-color: rgba(71, 67, 67, 0.808);
+    margin-left:10%;
+}
+.button{
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.boton:hover{
+    background-color: rgba(128, 128, 128, 0.938);
+    text-decoration: none;
+}
+.maintext{
+    display:flex;
+    width: 60%;
+    margin-left: 10%;
+    margin-top: 30px;
+    flex-direction: column;
+}
+.stattext{
+    display:flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+    border-bottom: solid 1px black;
+}
+.tablasPct{
+    display:flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+.text{
+    display:flex;
+    width: 50%;
+    flex-direction: column;
+    margin-right: 30px;
+}
+.tableStats{
+    display: flex;
+    width: 50%;
+flex-direction: column;
+}
+.tablePct{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    padding-right: 30px;
+}
+.tabla{
+    display:flex;
+    width: 60%;
+    margin-left: 10%;
+    margin-top: 0px;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    background-color: rgba(71, 67, 67, 0.774);
+    margin-left:10%;
+    height: 60px;
+    margin-top: 50px;
+    color: white;
+    
+
+}
+/* .w-80{
+    width: 80%;
+    margin-left: 10%;
+    
+} */
+button{
+    color: white;
+}
+.main{
+    display: flex;
+    widows: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+.accordion{
+    width: 60%;
+}
+.imagen{
+    margin-left: 50px;
+}
+.dropdown-item:hover{
+    background-color: grey;
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
+}
+.btn:hover{
+    text-decoration: none;
+}
+
+.filter{
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.accordionTable{
+    display: flex;
+    margin-left: 10%;
+    width: 100%;
+}
+.card{
+    width: 80%;
+}
+.card-header{
+    background-color: black;
+}
+.btn{
+    color: white;
+}
+.btn:hover{
+    color: white;
+}
+.paginate_button{
+    padding-right: 10px;
+}
+.ellipsis{
+    padding-right: 10px;
+}
+.paginate_button:hover{
+    cursor: pointer;
+}
+.ellipsis:hover{
+    cursor: pointer;
+}
+.sorting_asc:hover{
+    cursor: pointer;
+}
+.sorting:hover{
+    cursor: pointer;
+}
+.current{
+    color:red
+}
+
+.cb{
+    margin-left: 5px;
+}
+.tableTitle{
+    text-align: end;
+    font-size: 25px;
+}
+.pctTitle{
+    font-size: 20px;
+}
+
+

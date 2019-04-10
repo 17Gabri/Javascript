@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Senate</title>
+    <title>House Loyalty</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -66,69 +66,62 @@
         </div>
     </div>
 
-    <div class="maintext">
-        <h2>Senators</h2>
-        <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S.
-            Constitution. Each state is represented by two senators, regardless of population, who serve staggered
-            six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to
-            treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet
-            secretaries, federal judges, other federal executive officials, military officers, regulatory officials,
-            ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the
-            House.</p>
-    </div>
-    <div class="filter">
-        <div class="checkbox">
-            <b>Filter by Party:</b>
-            <input type="checkbox" name="party" value="R" data-bind="checked: filters" id="rep" class="cb">
-            <label for="rep">Republican</label>
-            <input type="checkbox" name="party" value="D" data-bind="checked: filters" id="dem" class="cb"> <label
-                for="dem">Democrat</label>
-            <input type="checkbox" name="party" value="I" data-bind="checked: filters" id="ind" class="cb"> <label
-                for="ind">Independent</label>
+    <div class="stattext">
+        <div class="text">
+            <h2>Loyalty</h2>
+            <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans
+                respectively,
+                tend to be the most faithful in voting for their party's nominee for office and legislation that backs
+                their
+                party's agenda.</p>
         </div>
-        <div class="select">
-            <b>Filter by State: </b>
-            <select name="selectstate" id="selectstate">
-                <option value="Select">Select state
-            </select>
+        <div class="tableStats">
+            <h2 class="tableTitle">House at a Glance</h2>
+            <table class="table table-hover" id="tabla">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Party</th>
+                        <th>No. of Reps</th>
+                        <th>% Voted /w Party</th>
+                    </tr>
+                </thead>
+                <tbody id="miTablaStats"></tbody>
+            </table>
         </div>
     </div>
-    <div class="accordionTable" id="accordionExample">
-        <div class="card z-depth-0 bordered">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                        aria-expanded="false" aria-controls="collapseOne">
-                        Show results
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="w-80">
-                        <table class="table table-hover" id="tabla">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Party</th>
-                                    <th>State</th>
-                                    <th>Years in Office</th>
-                                    <th>% Votes w/ Party</th>
-                                </tr>
-                            </thead>
-                            <tbody id="miTabla"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <div class="tablasPct">
+        <div class="tablePct">
+            <h2 class="pctTitle">Least Loyal (Bottom 10% of Party)</h2>
+            <table class="table table-hover" id="tabla">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>No. Party Votes</th>
+                        <th>% Party Votes</th>
+                    </tr>
+                </thead>
+                <tbody id="miTablaLeastLoyal"></tbody>
+            </table>
+        </div>
+        <div class="tableStats">
+            <h2 class="pctTitle">Most Loyal (Top 10% of Party)</h2>
+            <table class="table table-hover" id="tabla">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>No. Party Votes</th>
+                        <th>% Party Votes</th>
+                    </tr>
+                </thead>
+                <tbody id="miTablaMostLoyal"></tbody>
+            </table>
         </div>
     </div>
     <div class="footer"> &copy 2016 TGIF &#124 All Rigths Reserved
 
     </div>
-    <script src="senate.js"></script>
-    <script src="main.js"></script>
-
+    <script src="rephouse.js"></script>
+    <script src="loyaltyHouse.js"></script>
 </body>
 
 </html>
