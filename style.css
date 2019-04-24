@@ -1,36 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
-body{
+body {
     font-family: 'Roboto Slab', serif;
 }
 
-.titulo{
+.titulo {
     margin-top: 50px;
 }
-a{
+
+a {
     height: 100%;
     width: 100%;
 }
-.header{
+
+.header {
     display: flex;
     justify-content: space-between;
     margin-right: 50px;
     width: 80%;
     margin-left: 10%;
 }
-.contacto{
+
+.contacto {
+    display: flex;
     font-size: 20px;
-    align-content: center;
+    align-content: flex-start;
     margin-top: 35px;
+    padding-top: 20px;
 }
-.navbar{
+
+.mail {
+    padding-top: 10px;
+}
+
+.navbar {
     display: flex;
     flex-direction: row;
     width: 80%;
     background-color: rgba(71, 67, 67, 0.808);
-    margin-left:10%;
+    margin-left: 10%;
 }
-.button{
+
+.button {
     display: flex;
     width: 20%;
     justify-content: center;
@@ -44,153 +55,345 @@ a{
     align-items: center;
     text-decoration: none;
 }
-.boton:hover{
+
+.boton:hover {
     background-color: rgba(128, 128, 128, 0.938);
     text-decoration: none;
 }
-.maintext{
-    display:flex;
+
+.maintext {
+    display: flex;
     width: 60%;
     margin-left: 10%;
     margin-top: 30px;
     flex-direction: column;
 }
-.stattext{
-    display:flex;
+
+.stattext {
+    display: flex;
     width: 80%;
     margin-left: 10%;
     margin-top: 30px;
     border-bottom: solid 1px black;
 }
-.tablasPct{
-    display:flex;
+
+.tablasPct {
+    display: flex;
     width: 80%;
     margin-left: 10%;
     margin-top: 30px;
 }
-.text{
-    display:flex;
+
+.text {
+    display: flex;
     width: 50%;
     flex-direction: column;
     margin-right: 30px;
 }
-.tableStats{
+
+.tableStats {
     display: flex;
     width: 50%;
-flex-direction: column;
+    flex-direction: column;
 }
-.tablePct{
+
+.tablePct {
     display: flex;
     width: 50%;
     flex-direction: column;
     padding-right: 30px;
 }
-.tabla{
-    display:flex;
-    width: 60%;
+
+.tabla {
+    display: flex;
+    width: 80%;
     margin-left: 10%;
     margin-top: 0px;
 }
-.footer{
+
+.tablaStats {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 0px;
+}
+
+
+td {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    width: 110px;
+}
+
+.footer {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80%;
     background-color: rgba(71, 67, 67, 0.774);
-    margin-left:10%;
+    margin-left: 10%;
     height: 60px;
     margin-top: 50px;
     color: white;
-    
+
 
 }
-/* .w-80{
-    width: 80%;
-    margin-left: 10%;
-    
-} */
-button{
+
+button {
     color: white;
 }
-.main{
+
+.main {
     display: flex;
     widows: 80%;
     margin-left: 10%;
     margin-top: 30px;
 }
-.accordion{
+
+.accordion {
     width: 60%;
 }
-.imagen{
+
+.imagen {
     margin-left: 50px;
 }
-.dropdown-item:hover{
+
+.dropdown-item:hover {
     background-color: grey;
     color: white;
 }
 
-a:hover{
-    text-decoration: none;
-}
-.btn:hover{
+a:hover {
     text-decoration: none;
 }
 
-.filter{
+.btn:hover {
+    text-decoration: none;
+}
+
+.filters {
     display: flex;
     width: 80%;
     margin-left: 10%;
     justify-content: space-between;
     margin-top: 30px;
 }
-.accordionTable{
+
+.accordionTable {
     display: flex;
     margin-left: 10%;
     width: 100%;
 }
-.card{
+
+.card {
     width: 80%;
 }
-.card-header{
+
+.card-header {
     background-color: black;
 }
-.btn{
+
+.btn {
     color: white;
-}
-.btn:hover{
-    color: white;
-}
-.paginate_button{
-    padding-right: 10px;
-}
-.ellipsis{
-    padding-right: 10px;
-}
-.paginate_button:hover{
-    cursor: pointer;
-}
-.ellipsis:hover{
-    cursor: pointer;
-}
-.sorting_asc:hover{
-    cursor: pointer;
-}
-.sorting:hover{
-    cursor: pointer;
-}
-.current{
-    color:red
 }
 
-.cb{
+.btn:hover {
+    color: white;
+}
+
+.paginate_button {
+    padding-right: 10px;
+}
+
+.ellipsis {
+    padding-right: 10px;
+}
+
+.paginate_button:hover {
+    cursor: pointer;
+}
+
+.ellipsis:hover {
+    cursor: pointer;
+}
+
+.sorting_asc:hover {
+    cursor: pointer;
+}
+
+.sorting:hover {
+    cursor: pointer;
+}
+
+.current {
+    color: red
+}
+
+.cb {
     margin-left: 5px;
 }
-.tableTitle{
+
+.tableTitle {
     text-align: end;
     font-size: 25px;
 }
-.pctTitle{
+
+.pctTitle {
     font-size: 20px;
 }
 
+.logo {
+    padding-bottom: 30px;
+}
 
+th {
+    cursor: pointer;
+}
+
+.headerSortDown:after,
+.headerSortUp:after {
+    content: ' ';
+    position: relative;
+    left: 10px;
+    border: 8px solid transparent;
+}
+
+.headerSortDown:after {
+    top: 15px;
+    border-top-color: silver;
+}
+
+.headerSortUp:after {
+    bottom: 15px;
+    border-bottom-color: silver;
+}
+
+.headerSortDown,
+.headerSortUp {
+    padding-right: 10px;
+}
+
+.pagination {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.pagbutton {
+    color: blue;
+    margin: 10px;
+}
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 32px 32px;
+}
+
+.lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgb(38, 11, 161);
+    margin: -3px 0 0 -3px;
+}
+
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+    top: 50px;
+    left: 50px;
+}
+
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+    top: 54px;
+    left: 45px;
+}
+
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+    top: 57px;
+    left: 39px;
+}
+
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+    top: 58px;
+    left: 32px;
+}
+
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+    top: 57px;
+    left: 25px;
+}
+
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+    top: 54px;
+    left: 19px;
+}
+
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+    top: 50px;
+    left: 14px;
+}
+
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+    top: 45px;
+    left: 10px;
+}
+
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#loader {
+    position: absolute;
+    left: 45%;
+    top: 110%;
+}

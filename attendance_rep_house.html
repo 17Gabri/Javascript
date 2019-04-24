@@ -11,124 +11,163 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
 
 </head>
 
 <body class="bg-light">
-    <div class="titulo">
-        <div class="header">
-            <div class="logo"><img src="logo.png" alt="logo" width="100" height="100"></div>
-            <div class="contacto">
-                <img src="icono.png" alt="icono" width="50" height="50">
-                <a href="mailto: 17gabri@hotmail.es">info@tgif.net</a>
+    <div id="myApp">
+        <div class="titulo">
+            <div class="header">
+                <div class="logo"><img src="logo.png" alt="logo" width="300" height="150"></div>
+                <div class="contacto">
+                    <img src="icono.png" alt="icono" width="50" height="50">
+                    <a class="mail" href="mailto: 17gabri@hotmail.es">info@tgif.net</a>
+                </div>
             </div>
-        </div>
-        <div class="navbar">
-            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                <a class="text-light" href="
+            <div class="navbar">
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <a class="text-light" href="
                     index.html"><button type="button" class="btn btn-secondary">Home</button></a>
-                <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Congress 113
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" href="senate.html">Senate</a>
-                        <a class="dropdown-item" href="rep_house.html">House</a>
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Congress 113
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="senate.html">Senate</a>
+                            <a class="dropdown-item" href="rep_house.html">House</a>
+                        </div>
                     </div>
-                </div>
-                <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Attendance
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" href="attendance_senate.html">Senate</a>
-                        <a class="dropdown-item" href="attendance_rep_house.html">House</a>
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Attendance
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="attendance_senate.html">Senate</a>
+                            <a class="dropdown-item" href="attendance_rep_house.html">House</a>
+                        </div>
                     </div>
-                </div>
-                <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Party Loyalty
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" href="loyalty_senate.html">Senate</a>
-                        <a class="dropdown-item" href="loyalty_rep_house.html">House</a>
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Party Loyalty
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="loyalty_senate.html">Senate</a>
+                            <a class="dropdown-item" href="loyalty_rep_house.html">House</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="stattext">
-        <div class="text">
-            <h2>Attendance</h2>
-            <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house.
-                Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in
-                most
-                cases, debates continue even if a majority is not present.
+        <div class="stattext">
+            <div class="text">
+                <h2>Attendance</h2>
+                <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each
+                    house.
+                    Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus,
+                    in
+                    most
+                    cases, debates continue even if a majority is not present.
 
-                The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating
-                "aye"
-                or "no" when his or her name is announced. The House reserves roll-call votes for the most formal
-                matters,
-                as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic
-                device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if
-                present) cast the tiebreaking vote.</p>
+                    The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator
+                    stating
+                    "aye"
+                    or "no" when his or her name is announced. The House reserves roll-call votes for the most formal
+                    matters,
+                    as a roll-call of all 435 representatives takes quite some time; normally, members vote by
+                    electronic
+                    device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may
+                    (if
+                    present) cast the tiebreaking vote.</p>
+            </div>
+            <div class="tableStats">
+                <h2 class="tableTitle">House at a Glance</h2>
+                <table class="table table-hover" id="tabla">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Party</th>
+                            <th>No. of Reps</th>
+                            <th>% Voted /w Party</th>
+                        </tr>
+                    </thead>
+                    <tbody v-if="repPct.length > 0">
+                        <tr>
+                            <td>Democrats</a></td>
+                            <td>{{stats.dem}}</td>
+                            <td>{{(totalDem / demPct.length).toFixed(2)}}</td>
+                        </tr>
+                        <tr>
+                            <td>Republicans</a></td>
+                            <td>{{stats.rep}}</td>
+                            <td>{{(totalRep / repPct.length).toFixed(2)}}</td>
+                        </tr>
+                        <tr>
+                            <td>Independents</a></td>
+                            <td>{{stats.ind}}</td>
+                            <td>{{indPct.length}}</td>
+                        </tr>
+                        <tr>
+                            <td>Total</a></td>
+                            <td>{{stats.dem + stats.rep + stats.ind}}</td>
+                            <td>{{(((totalRep / repPct.length) + (totalDem / demPct.length) + (indPct.length)) / 2).toFixed(2)}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="tableStats">
-            <h2 class="tableTitle">House at a Glance</h2>
-            <table class="table table-hover" id="tabla">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Party</th>
-                        <th>No. of Reps</th>
-                        <th>% Voted /w Party</th>
-                    </tr>
-                </thead>
-                <tbody id="miTablaStats"></tbody>
-            </table>
+        <div class="tablasPct">
+            <div class="tablePct">
+                <h2 class="pctTitle">Least Engaged (Bottom 10% Attendance)</h2>
+                <table class="table table-hover" id="tablaStats">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>No. Missed Votes</th>
+                            <th>% Missed</th>
+                        </tr>
+                    </thead>
+                    <tbody id="miTablaBottom">
+                        <tr v-for="member in sortedMembers" v-model="sortedMembers">
+                            <td>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</td>
+                            <td>{{member.missed_votes}}</td>
+                            <td>{{member.missed_votes_pct}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tableStats">
+                <h2 class="pctTitle">Most Engaged (Top 10% Attendance)</h2>
+                <table class="table table-hover" id="tablaStats2">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>No. Missed Votes</th>
+                            <th>% Missed</th>
+                        </tr>
+                    </thead>
+                    <tbody id="miTablaTop">
+                        <tr v-for="member in reversedMembers" v-model="reversedMembers">
+                            <td>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</td>
+                            <td>{{member.missed_votes}}</td>
+                            <td>{{member.missed_votes_pct}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-    <div class="tablasPct">
-        <div class="tablePct">
-            <h2 class="pctTitle">Least Engaged (Bottom 10% Attendance)</h2>
-            <table class="table table-hover" id="tabla">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Name</th>
-                        <th>No. Missed Votes</th>
-                        <th>% Missed</th>
-                    </tr>
-                </thead>
-                <tbody id="miTablaBottom"></tbody>
-            </table>
-        </div>
-        <div class="tableStats">
-            <h2 class="pctTitle">Most Engaged (Top 10% Attendance)</h2>
-            <table class="table table-hover" id="tabla">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Name</th>
-                        <th>No. Missed Votes</th>
-                        <th>% Missed</th>
-                    </tr>
-                </thead>
-                <tbody id="miTablaTop"></tbody>
-            </table>
-        </div>
-    </div>
-    <div class="footer"> &copy 2016 TGIF &#124 All Rigths Reserved
+        <div class="footer"> &copy 2016 TGIF &#124 All Rigths Reserved
 
+        </div>
     </div>
-    <script src="rephouse.js"></script>
-    <script src="statsHouse.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="mainVue.js"></script>
+
 </body>
 
 </html>

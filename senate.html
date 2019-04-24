@@ -11,21 +11,17 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
 
 </head>
 
-<body class="bg-light">
+<body class="bg-light" onload="myFunction()" style="margin:0;">
     <div class="titulo">
         <div class="header">
-            <div class="logo"><img src="logo.png" alt="logo" width="100" height="100"></div>
+            <div class="logo"><img src="logo.png" alt="logo" width="300" height="150"></div>
             <div class="contacto">
                 <img src="icono.png" alt="icono" width="50" height="50">
-                <a href="mailto: 17gabri@hotmail.es">info@tgif.net</a>
+                <a class="mail" href="mailto: 17gabri@hotmail.es">info@tgif.net</a>
             </div>
         </div>
         <div class="navbar">
@@ -76,58 +72,65 @@
             ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the
             House.</p>
     </div>
-    <div class="filter">
-        <div class="checkbox">
-            <b>Filter by Party:</b>
-            <input type="checkbox" name="party" value="R" data-bind="checked: filters" id="rep" class="cb">
-            <label for="rep">Republican</label>
-            <input type="checkbox" name="party" value="D" data-bind="checked: filters" id="dem" class="cb"> <label
-                for="dem">Democrat</label>
-            <input type="checkbox" name="party" value="I" data-bind="checked: filters" id="ind" class="cb"> <label
-                for="ind">Independent</label>
-        </div>
-        <div class="select">
-            <b>Filter by State: </b>
-            <select name="selectstate" id="selectstate">
-                <option value="Select">Select state
-            </select>
-        </div>
-    </div>
-    <div class="accordionTable" id="accordionExample">
-        <div class="card z-depth-0 bordered">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                        aria-expanded="false" aria-controls="collapseOne">
-                        Show results
-                    </button>
-                </h5>
+    <div id="myApp">
+        <div class="filters">
+            <div class="cb">
+                <input type="checkbox" name="dem" id="dem" value="D" v-model="checkboxes" /><label for="dem">
+                    Democrats</label>
+                <input type="checkbox" name="rep" id="rep" value="R" v-model="checkboxes" /><label for="rep">
+                    Republicans</label>
+                <input type="checkbox" name="ind" id="ind" value="I" v-model="checkboxes" /><label
+                    for="ind">Independents</label>
             </div>
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="w-80">
-                        <table class="table table-hover" id="tabla">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Party</th>
-                                    <th>State</th>
-                                    <th>Years in Office</th>
-                                    <th>% Votes w/ Party</th>
-                                </tr>
-                            </thead>
-                            <tbody id="miTabla"></tbody>
-                        </table>
-                    </div>
-                </div>
+            <div class="select">
+                <select name="states" id="selector" v-model="stateSelected">
+                    <option value="all">Select State</option>
+                    <option v-for="state in states">{{state}}</option>
+                </select>
+                <input type="text" v-model="search" placeholder="Search by Name.." />
             </div>
         </div>
+        <div class="lds-roller" id="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="tabla">
+            <table class="table table-hover" id="tablaStats">
+                <thead class="thead-dark">
+                    <tr>
+                        <th @click="sort('first_name')" class="headerSortDown">Name</th>
+                        <th @click="sort('party')" class="headerSortDown">Party</th>
+                        <th @click="sort('state')" class="headerSortDown">State</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="member in filteredMembers">
+                        <td><a href="{{member.url}}">{{member.first_name}} {{member.middle_name}}
+                                {{member.last_name}}</a></td>
+                        <td>{{member.party}}</td>
+                        <td>{{member.state}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <p class="pagination">
+            <button @click="prevPage" class="pagbutton">Previous</button>
+            <button @click="nextPage" class="pagbutton">Next</button>
+        </p>
     </div>
+
     <div class="footer"> &copy 2016 TGIF &#124 All Rigths Reserved
 
     </div>
-    <script src="senate.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="mainVue.js"></script>
 
 </body>
 
