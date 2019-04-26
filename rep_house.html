@@ -7,14 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Representation House</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="colorbox.css">
 </head>
 
-<body class="bg-light" onload="myFunction()" style="margin:0;">
+<body class="bg-light" onload="myFunction()" style="margin:0;" id="bodyLoad">
     <div class="titulo">
         <div class="header">
             <div class="logo"><img src="logo.png" alt="logo" width="300" height="150"></div>
@@ -79,8 +80,8 @@
                     Democrats</label>
                 <input type="checkbox" name="rep" id="rep" value="R" v-model="checkboxes" /><label for="rep">
                     Republicans</label>
-                <input type="checkbox" name="ind" id="ind" value="I" v-model="checkboxes" /><label for="ind"></label>
-                Independents</label>
+                <input type="checkbox" name="ind" id="ind" value="I" v-model="checkboxes" /><label
+                    for="ind">Independents</label>
             </div>
             <div class="select">
                 <select name="states" id="selector" v-model="stateSelected">
@@ -111,7 +112,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="member in filteredMembers">
-                        <td><a href="{{member.url}}">{{member.first_name}} {{member.middle_name}}
+                        <td><a :href="member.url">{{member.first_name}} {{member.middle_name}}
                                 {{member.last_name}}</a></td>
                         <td>{{member.party}}</td>
                         <td>{{member.state}}</td>
@@ -127,6 +128,8 @@
     <div class="footer"> &copy 2016 TGIF &#124 All Rigths Reserved</div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="mainVue.js"></script>
+    <script src="jquery.colorbox.js"></script>
+    <script src="jquery.colorbox-min.js"></script>
 
 </body>
 

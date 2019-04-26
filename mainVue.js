@@ -39,6 +39,7 @@ let myVueSenate = new Vue({
                 .then(function (data) {
                     myVueSenate.members = data.results[0].members;
                     myVueSenate.printStats();
+                    $("#loader").fadeOut("slow");
                 })
         },
         printStats() {
@@ -69,6 +70,13 @@ let myVueSenate = new Vue({
                 this.currentSortDir = this.currentSortDir === 'asc' ? 'desc' : 'asc';
             }
             this.currentSort = s;
+            if (event.target.classList.contains("headerSortDown")) {
+                event.target.classList.remove("headerSortDown")
+                event.target.classList.add("headerSortUp")
+            } else {
+                event.target.classList.remove("headerSortUp")
+                event.target.classList.add("headerSortDown")
+            }
         },
         nextPage() {
             if ((this.currentPage * this.pageSize) < this.members.length) this.currentPage++;
@@ -139,10 +147,25 @@ let myVueSenate = new Vue({
 
     created() {
         this.getData()
+    },
+
+    //Añadimos el lighbox en updated para que funcione cuando actualiza la página
+    updated() {
+        jQuery("a.iframe").click(
+            function (ev) {
+                ev.preventDefault();
+                var hr = jQuery(this).attr("href");
+                jQuery.colorbox({
+                    iframe: true,
+                    href: hr,
+                    innerWidth: 800,
+                    innerHeight: 700
+                });
+            });
     }
 });
 
-var myVar;
+let myVar;
 
 function myFunction() {
     myVar = setTimeout(showPage, 1000);
@@ -150,5 +173,5 @@ function myFunction() {
 
 function showPage() {
     document.getElementById("loader").style.display = "none";
-    document.getElementById("myDiv").style.display = "block";
+    document.getElementById("bodyLoad").style.display = "block";
 }
